@@ -1,0 +1,5 @@
+mlx-whisper==0.4.3
+av==15.1.0
+soundfile>=0.13,<0.15
+numpy>=2,<3
+Markdown>=3.7,<4
