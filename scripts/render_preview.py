@@ -105,11 +105,13 @@ if(query.has('t')){
 }
 </script></main></body></html>"""
     (output / "transcript.html").write_text(transcript, encoding="utf-8")
+    review_link = '<a href="speaker-review.html">화자 확인</a>' if (output / "speaker-review.html").is_file() else ""
     page = head + (
         f'<header><h1>{title}</h1><p class="meta">회의일 {meeting_date} · 참석자 {attendees}</p>'
         f'<p class="meta">녹음에 기록된 생성시각 {recorded} · {stamp(duration)}</p>'
         '<nav><a href="shared.md">요약 Markdown</a><a href="details.md">상세 Markdown</a>'
-        '<a href="transcript.html">시간별 전사와 원음</a></nav></header>'
+        '<a href="transcript.html">시간별 전사와 원음</a>'
+        f'{review_link}</nav></header>'
         f'<section>{bodies["shared.md"]}</section><details open><summary>상세 회의록</summary>'
         f'<div class="detail-content">{bodies["details.md"]}</div></details>'
         f'<footer>{note}</footer></main></body></html>')

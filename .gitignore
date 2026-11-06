@@ -21,8 +21,14 @@ recordings/
 *.ogg
 *.mp4
 *.safetensors
+*.onnx
 *.npz
 .transcribe.lock
+.speaker-review.lock
+speaker-samples/
+speaker-diarization.json
+speaker-review.json
+speaker-review.html
 source.json
 audio-verification.json
 minutes-verification.json
